@@ -4,7 +4,7 @@ import tailwindcss from "tailwindcss";
 
 export default defineConfig({
     plugins: [react()],
-    base: "/book-landing-page/",
+    base: "/ToDolist/",
     server: {
         open: true,
         port: 3030,
