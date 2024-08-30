@@ -4,6 +4,7 @@ import tailwindcss from "tailwindcss";
 
 export default defineConfig({
     plugins: [react()],
+    base: "/book-landing-page/",
     server: {
         open: true,
         port: 3030,
