@@ -80,10 +80,11 @@ export default function Main({ sorted, setSorted }) {
                 setShown={setShown}
             />
             {tasks.map((item) => {
-                return shown === "All" ||
-                    (shown === "Active" && !item.checked) ||
-                    (shown === "Completed" && item.checked) ? (
-                    item.id === edit ? (
+                return (
+                    (shown === "All" ||
+                        (shown === "Active" && !item.checked) ||
+                        (shown === "Completed" && item.checked)) &&
+                    (item.id === edit ? (
                         <Edit
                             item={item}
                             setEdit={setEdit}
@@ -98,14 +99,14 @@ export default function Main({ sorted, setSorted }) {
                             key={item.id}
                             onEdit={handleEdit}
                         />
-                    )
-                ) : null;
+                    ))
+                );
             })}
-            <div className="mt-5 flex rounded-md dark:border-bg target:bg-prime border mb-8">
+            <div className="mt-5 flex rounded-md dark:border-bg target:bg-prime border mb-8 max-[484px]:text-base">
                 <input
                     placeholder="TASK..."
                     value={task}
-                    className="bg-bg dark:bg-black dark:text-bg text-slate-300 w-4/5 rounded-l-md p-3 outline-none"
+                    className="bg-bg dark:bg-black dark:text-bg text-slate-300 w-4/5 rounded-l-md p-3 outline-none "
                     onChange={handleChange}
                     autoFocus
                     ref={taskBar}

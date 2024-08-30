@@ -44,22 +44,22 @@ export default function Edit({ item, setEdit, setTasks }) {
     }, [handleClose, handleDone]);
 
     return (
-        <div className="mt-5 flex rounded-md dark:border-bg target:bg-prime border my-5">
+        <div className="mt-5 flex rounded-md dark:border-bg target:bg-prime border my-5 max-[657px]:text-base">
             <input
                 placeholder="TASK..."
                 value={task}
-                className="bg-bg dark:bg-black dark:text-bg text-slate-300 w-4/5 rounded-l-md p-3 outline-none"
+                className="bg-bg dark:bg-black dark:text-bg text-slate-300 flex-1 rounded-l-md p-3 outline-none"
                 onChange={handleChange}
                 autoFocus
             />
             <button
-                className="w-[10%] border-l bg-prime hover:bg-hover active:bg-prime"
+                className="w-[10%]  border-l bg-prime hover:bg-hover active:bg-prime max-[485px]:w-[20%] max-[362px]:text-sm  "
                 onClick={handleDone}
             >
                 Done
             </button>
             <button
-                className="w-[10%] border-l  rounded-r-md bg-prime active:bg-prime hover:bg-hover"
+                className="w-[10%] border-l  rounded-r-md bg-prime active:bg-prime hover:bg-hover max-[485px]:w-[20%] max-[362px]:text-sm "
                 onClick={handleClose}
             >
                 Close

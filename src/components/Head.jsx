@@ -5,19 +5,21 @@ function Head({ sorted, setSorted, remainingNum, shown, setShown }) {
     }
 
     return (
-        <div className="mt-2 border-b-2 flex justify-between dark:text-bg">
-            <p className="text-4xl inline">{remainingNum} Tasks remaining</p>
-            <div className="">
+        <div className="mt-2 border-b-2 flex justify-between dark:text-bg max-[730px]:flex-wrap ">
+            <p className="text-4xl inline max-[830px]:text-3xl max-[438px]:text-2xl ">
+                {remainingNum} Tasks remaining
+            </p>
+            <div className="flex text-xl max-[830px]:text-lg max-[438px]:text-base max-[397px]:text-sm">
                 {shown === "All" && (
                     <button
-                        className="border rounded-md w-52 hover:bg-wHover active:bg-bg dark:hover:bg-dHover dark:active:bg-black"
+                        className="border rounded-md my-2 px-2  hover:bg-wHover active:bg-bg dark:hover:bg-dHover dark:active:bg-black"
                         onClick={() => setSorted((sorted) => !sorted)}
                     >
                         {sorted ? "sorted by date" : "sorted by checked"}
                     </button>
                 )}
                 <select
-                    className="bg-bg border py-[.5px] m-2 rounded-md text-center hover:bg-wHover active:bg-bg cursor-pointer dark:bg-black dark:hover:bg-dHover dark:active:bg-black"
+                    className="bg-bg border m-2 rounded-md text-center hover:bg-wHover active:bg-bg cursor-pointer dark:bg-black dark:hover:bg-dHover dark:active:bg-black"
                     onChange={handleChange}
                 >
                     <option value="All">Show All Tasks</option>
