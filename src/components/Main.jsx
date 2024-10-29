@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { useLocalStorageState } from "./useLocalStorageState";
 import Tasks from "./Tasks";
 import Edit from "./Edit";
@@ -22,8 +22,8 @@ export default function Main({ sorted, setSorted }) {
     function handleChange(e) {
         setTask(e.target.value);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    function handleAddTask() {
+
+    const handleAddTask = useCallback(() => {
         if (!task) {
             return;
         }
@@ -40,7 +40,7 @@ export default function Main({ sorted, setSorted }) {
             },
         ]);
         setTask("");
-    }
+    }, [setTasks, task]);
 
     function handleCheck(item) {
         setTasks((tasks) =>

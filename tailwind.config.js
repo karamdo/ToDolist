@@ -4,12 +4,12 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         colors: {
-            black: "#333",
+            black: "#311",
             bg: "#F0E0E0",
-            prime: "#FFA050",
-            hover: "#eF9040",
-            checked: "#dF8030",
-            wHover: "#E0D0D0",
+            prime: "#44ee22",
+            hover: "#6d2",
+            checked: "#123",
+            wHover: "#a11",
             dHover: "#504d4d",
         },
         extend: {},
